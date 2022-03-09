@@ -1,4 +1,5 @@
 
+
 let lengthBackpack = 2;
 let backpackAllItems = ['sword','spear','magic'];
 
@@ -10,7 +11,8 @@ function numberOfIndex(){
 function backpackItem() {
     let numberofIndex = numberOfIndex();
     return backpackAllItems[numberofIndex];
-}
+}; 
+
 function ifHero (backpackitem,heroName,backpack){
     if (heroName === 'swordsman' && backpackitem === 'sword') {
         backpack.push(backpackitem);
@@ -21,20 +23,29 @@ function ifHero (backpackitem,heroName,backpack){
          } else if (heroName === 'wizard' && backpackitem === 'magic') {
             backpack.push(backpackitem);
             console.log(backpackitem);
-         } else {
-            console.log(backpackitem);
+         }else{
+            throw `${heroName} can't take ${backpackitem}`;
          }
 
 }
 function backPack(heroName){
     let backpack = [];
-    console.log(backpack);
+    
        while(backpack.length<lengthBackpack){
         let backpackitem = backpackItem();
-        ifHero (backpackitem,heroName,backpack); 
+        try{
+            ifHero(backpackitem,heroName,backpack);
+        }catch(e){
+            alert(e);
+        }
+            
 }
 return backpack;
 }
+
+
+
+
 
 
 
