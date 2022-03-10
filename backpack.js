@@ -16,13 +16,10 @@ function backpackItem() {
 function ifHero (backpackitem,heroName,backpack){
     if (heroName === 'swordsman' && backpackitem === 'sword') {
         backpack.push(backpackitem);
-             console.log(backpackitem);
          } else if (heroName === 'swordsman' && backpackitem === 'spear') {
             backpack.push(backpackitem);
-            console.log(backpackitem);
          } else if (heroName === 'wizard' && backpackitem === 'magic') {
             backpack.push(backpackitem);
-            console.log(backpackitem);
          }else{
             throw `${heroName} can't take ${backpackitem}`;
          }
