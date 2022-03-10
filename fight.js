@@ -46,7 +46,5 @@ function fight(hero,monster){
         console.log(monsterHealth);
         console.log(heroHealth);
     } while(trueStatemant(heroHealth,monsterHealth) ===! false);
-        console.log(monsterHealth);
-        console.log(heroHealth);
 }
 fight(wizard,dragon);
