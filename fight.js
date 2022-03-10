@@ -1,16 +1,52 @@
+let spear = swordsman.secondaryAttack;
+let sword = swordsman.basicAttack;
+let magic = wizard.basicAttack;
+
 function heroAttack(hero) {
-    let heroBackpack = hero.backpack;
-    console.log(heroBackpack);
-    return;
-}
-function fight(hero,monster){
-    let attackNumber = Math.floor(Math.random()*100);
-    let heroattack = heroAttack(hero);
-    console.log(attackNumber);
-    if(attackNumber<=50){
-        console.log(heroattack);
+    let heroBackpack = backpackItem(hero.backpack);
+    if(heroBackpack === 'sword'){
+        return sword;
+    }else if(heroBackpack === 'spear'){
+        return spear;
     }else{
-        console.log(monster);
+        return magic;
     }
 }
-fight(swordsman,spider);
+function monsterAttack(monster){
+    let attackNumber = Math.floor(Math.random()*100);
+    if (attackNumber<=50){
+        return monster.basicAttack;
+    }else{
+        return monster.secondaryAttack;
+    }
+}
+function trueStatemant(x,y){
+    if(x<=0){
+        console.log('Hero has lost!')
+        return false;
+    }if(y<=0){
+        console.log('Monster is dead!')
+        return false;
+    }else {
+        return true;
+    }
+}
+function fight(hero,monster){
+            let monsterHealth = monster.health;
+            let heroHealth = hero.health;
+        do{
+            let attackNumber = Math.floor(Math.random()*100);
+            let heroattack = heroAttack(hero);
+            let monsterattack = monsterAttack(monster);
+            if(attackNumber<=50){
+               monsterHealth = monsterHealth - heroattack;
+            }else{
+                heroHealth = heroHealth - monsterattack;
+        }
+        console.log(monsterHealth);
+        console.log(heroHealth);
+    } while(trueStatemant(heroHealth,monsterHealth) ===! false);
+        console.log(monsterHealth);
+        console.log(heroHealth);
+}
+fight(wizard,dragon);
