@@ -32,10 +32,6 @@ let wizard = new Hero('wizard',20,0,150,backPack('wizard'));
 let swordsman = new Hero('swordsman', 10,15,100,backPack('swordsman'));
 let dragon = new Monster('dragon',5,20,200);
 let spider = new Monster('spider', 5,8,200);
-console.log(wizard);
-console.log(swordsman);
-console.log(dragon);
-console.log(spider);
 
 
 
