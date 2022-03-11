@@ -1,6 +1,3 @@
-
-
-
 let lengthBackpack = 2;
 let backpackAllItems = ['sword','spear','magic'];
 
@@ -51,6 +48,13 @@ function backPack(heroName){
 return backpack;
 }
 //making backpack full
+
+
+
+
+
+
+
 
 
 
