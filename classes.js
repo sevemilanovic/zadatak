@@ -6,14 +6,14 @@ class Monster{
         this.health = health
     }
     attack(){
-   
-        let randomNumber = Math.floor(Math.random()*10);
-        console.log(randomNumber);
-         if (randomNumber<= 5 ){
+    
+        let randomnumber = randomNumber();
+        console.log(randomnumber);
+         if (randomnumber<= 50 ){
                 return this.basicAttack;
              
             }
-         if ( randomNumber > 5){
+         if ( randomnumber > 50){
                 return this.secondaryAttack;
              }
             }
@@ -26,14 +26,17 @@ class Hero extends Monster{
         this.backpack = backpack;
         
     }
+    heroAttack() {
+        let heroBackpack = backpackItem(this.backpack);
+        if(heroBackpack === 'sword'){
+            return this.basicAttack;
+        }else if(heroBackpack === 'spear'){
+            return this.secondaryAttack;
+        }else{
+            return this.basicAttack;
+        }
+    }
 }
-let randomNumber = Math.floor(Math.random()*10);
-let wizard = new Hero('wizard',20,0,150,backPack('wizard'));
-let swordsman = new Hero('swordsman', 10,15,100,backPack('swordsman'));
-let dragon = new Monster('dragon',5,20,200);
-let spider = new Monster('spider', 5,8,200);
-
-
 
 
 
